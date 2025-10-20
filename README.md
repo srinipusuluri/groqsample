@@ -44,6 +44,76 @@ A Streamlit-based financial advisor application that uses local Ollama models to
    ollama serve
    ```
 
+## 🤖 Ollama Basics
+
+### **Essential Commands:**
+
+```bash
+# Check Ollama status
+ollama --version
+
+# List available models
+ollama list
+
+# Pull a new model
+ollama pull <model_name>
+
+# Remove a model (free up space)
+ollama rm <model_name>
+
+# Start Ollama service
+ollama serve
+
+# Stop Ollama service (Ctrl+C or kill the process)
+pkill ollama
+```
+
+### **Model Management:**
+
+```bash
+# Check which models you have
+ollama list
+
+# See all available models online
+ollama search <model_name>
+
+# Get info about a specific model
+ollama show <model_name>
+
+# Free up disk space by removing unused models
+ollama rm llama3.2:3b  # Remove general model
+ollama rm llama3:latest # Remove reasoning model
+```
+
+### **Testing Models:**
+
+```bash
+# Test general model (quick responses)
+ollama run llama3.2:3b "What is compound interest?"
+
+# Test reasoning model (detailed analysis)
+ollama run llama3:latest "Explain investment diversification strategies"
+
+# Exit the interactive chat
+Type /bye or Ctrl+D
+```
+
+### **Troubleshooting Ollama:**
+
+```bash
+# Check if Ollama is running
+ps aux | grep ollama
+
+# Check which port Ollama uses (default: 11434)
+lsof -i :11434
+
+# If port is busy, kill conflicting process
+kill -9 <process_id>
+
+# Restart Ollama service
+ollama serve
+```
+
 ## 🚀 Usage
 
 1. **Run the application:**
