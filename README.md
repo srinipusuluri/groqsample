@@ -4,9 +4,10 @@ A Streamlit-based financial advisor application that uses local Ollama models to
 
 ## 🚀 Features
 
-- **Two AI Modes:**
+- **Multiple AI Modes:**
   - **General Mode (Grok-3)**: Uses `llama3.2:3b` for quick, concise responses to simple financial questions
   - **Reasoning Mode (Grok-4)**: Uses `llama3:latest` for detailed, analytical responses with step-by-step breakdowns
+  - **DeepSeek Mode**: Uses `deepseek-r1:7b` or `deepseek-coder:6.7b` for advanced reasoning and code-aware financial analysis
 
 - **Local AI Processing:** No API keys required - everything runs locally using Ollama
 - **Clean Interface:** Simple, intuitive Streamlit UI for easy interaction
@@ -37,6 +38,7 @@ A Streamlit-based financial advisor application that uses local Ollama models to
      ```bash
      ollama pull llama3.2:3b
      ollama pull llama3:latest
+     ollama pull deepseek-r1:7b  # Optional: For advanced reasoning
      ```
 
 4. **Start Ollama service:**
@@ -81,8 +83,9 @@ ollama search <model_name>
 ollama show <model_name>
 
 # Free up disk space by removing unused models
-ollama rm llama3.2:3b  # Remove general model
-ollama rm llama3:latest # Remove reasoning model
+ollama rm llama3.2:3b     # Remove general model
+ollama rm llama3:latest   # Remove reasoning model
+ollama rm deepseek-r1:7b  # Remove DeepSeek model (4.7GB)
 ```
 
 ### **Testing Models:**
@@ -93,6 +96,9 @@ ollama run llama3.2:3b "What is compound interest?"
 
 # Test reasoning model (detailed analysis)
 ollama run llama3:latest "Explain investment diversification strategies"
+
+# Test DeepSeek model (advanced reasoning)
+ollama run deepseek-r1:7b "Analyze portfolio diversification strategies with step-by-step reasoning"
 
 # Exit the interactive chat
 Type /bye or Ctrl+D
@@ -127,6 +133,7 @@ ollama serve
 3. **Select your mode:**
    - Choose "General (Grok-3)" for quick answers
    - Choose "Reasoning (Grok-4)" for detailed analysis
+   - Choose "DeepSeek" for advanced reasoning with step-by-step analysis
 
 4. **Ask financial questions:**
    - "What is compound interest?"
@@ -147,6 +154,7 @@ groqsample/
 The application uses these Ollama models:
 - **General Mode:** `llama3.2:3b` - Fast, lightweight model for quick responses
 - **Reasoning Mode:** `llama3:latest` - More powerful model for detailed analysis
+- **DeepSeek Mode:** `deepseek-r1:7b` - Advanced reasoning model (4.7GB)
 
 ## 🌟 Example Use Cases
 
